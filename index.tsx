@@ -1,6 +1,7 @@
 let byId = document.getElementById;
 
-var toRender = Array()
+var toRender = array []
+var renderObject = string ""
 
 class Shape {
   constructor(width, height, color) {
@@ -21,13 +22,11 @@ class Shape {
 class Rectangle extends Shape {
   constructor(width, height, color, rotation) {
     super(width, height, color);
-    this.type = "rect";
+    this.type = string "rect";
     this.direction = rotation
   }
   render() {
-    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
-           <rect width="100%" height="100%" fill={this.color} {this.direction ? transform={`"rotate(${this.direction})"`} : />
-           </svg>);
+    return (<rect width={this.width} height={this.height} fill={this.color} {!!this.direction ? transform=`rotate(${this.direction}` : ""}/>);
   }
 }
 
@@ -35,18 +34,18 @@ class Circle extends Shape {
   constructor(width, height, color) {
     super(width, height, color);
     this.type = "circ"
+    this.x = 0
+    this.y = 0
   }
   render() {
-    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
-           <ellipse rx={this.width} ry={this.height} fill={this.color} />
-           </svg>);
+    return (<ellipse rx={this.width} ry={this.height} fill={this.color} />);
   }
 }
 
 class Image {
   constructor(src, width, height, rotation) {
     if (!!src) {
-      this.src = src
+      this.src = string src
     } else {
       throw new Error ("Image cannot have no source: please provide URL")
     }
@@ -61,5 +60,7 @@ class Image {
 }
 
 function drawScreen(bg) {
-  
+  toRender.forEach((obj) => {
+    
+  })
 }
