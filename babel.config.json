@@ -1,5 +1,4 @@
 {
-  "filename": "src/index.tsx",
   "plugins": ["@babel/plugin-transform-react-jsx", "@babel/preset-typescript"],
   "targets": {
     "chrome": "69",
@@ -9,6 +8,5 @@
     "safari": "11",
     "node": "12"
   },
-  "minifed": true,
-  "MatchPattern": "src/*.ts*"
+  "minifed": true
 }
