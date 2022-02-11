@@ -61,10 +61,10 @@ class Image {
   render() {
     return React.createElement("image",
       {
-      width:{this.width},
-      height:{this.height}, 
-      transform:{this.direction || ''}, 
-      'xlink:href':{this.src}
+      width:this.width,
+      height:this.height, 
+      transform:this.direction, 
+      'xlink:href':this.src
     );
   }
 }
