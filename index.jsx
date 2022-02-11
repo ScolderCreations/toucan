@@ -1,5 +1,7 @@
 let byId = document.getElementById;
 
+var toRender = Array()
+
 class Shape {
   constructor(width, height, color) {
     this.width = width || 50;
@@ -54,8 +56,10 @@ class Image {
     this.view = true
   }
   render() {
-    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
-           <image width="100%" height="100%" transform={`rotate(${this.direction})`} xlink:href={this.src}/>
-           </svg>);
+    return (<image width={this.width} height={this.height} transform={`rotate(${this.direction})`} xlink:href={this.src}/>);
   }
+}
+
+function drawScreen(bg) {
+  
 }
