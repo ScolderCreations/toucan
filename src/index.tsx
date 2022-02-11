@@ -59,20 +59,29 @@ class Image {
     this.view = true
   }
   render() {
-    return (
-      <image width={this.width} height={this.height} transform={this.direction || ''} 'xlink:href'={this.src}/>
+    return React.createElement("image",
+      {
+      width:{this.width},
+      height:{this.height}, 
+      transform:{this.direction || ''}, 
+      'xlink:href':{this.src}
     );
   }
 }
 
 function drawScreen() {
   renderObject = renderObject + (
-    <svg version="1.1" width="1440" height="1080" xmlns="http://www.w3.org/2000/svg">
+    <svg version="1.1" 
+      width="1440"
+      height="1080" 
+      xmlns="http://www.w3.org/2000/svg">
       );
   toRender.forEach((obj) => {
     renderObject = renderObject + obj.render()
   });
-  renderObject = renderObject + (</svg>);
+  renderObject = renderObject + (
+    </svg>
+  );
   if (!(getScreen() == renderObject)) {
     ReactDOM.render(element, document.getElementById('root'));
   }
