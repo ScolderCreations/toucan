@@ -22,6 +22,11 @@ class Rectangle extends Shape {
     this.type = "rect";
     this.direction = rotation
   }
+  render() {
+    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
+           <rect width="100%" height="100%" fill={this.color} />
+           </svg>);
+  }
 }
 
 class Circle extends Shape {
