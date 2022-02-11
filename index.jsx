@@ -24,7 +24,7 @@ class Rectangle extends Shape {
   }
   render() {
     return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
-           <rect width="100%" height="100%" fill={this.color} />
+           <rect width="100%" height="100%" fill={this.color} {this.direction ? transform={`"rotate(${this.direction})"`} : />
            </svg>);
   }
 }
@@ -33,6 +33,11 @@ class Circle extends Shape {
   constructor(width, height, color) {
     super(width, height, color);
     this.type = "circ"
+  }
+  render() {
+    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
+           <ellipse rx= ry= fill={this.color} />
+           </svg>);
   }
 }
 
