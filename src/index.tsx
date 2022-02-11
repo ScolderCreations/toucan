@@ -28,7 +28,7 @@ class Rectangle extends Shape {
   }
   render() {
     return (
-      <rect width={this.width} height={this.height} fill={this.color} transform={this.direction || ''}/>
+      <rect width={this.width} height={this.height} fill={this.color} transform={this.direction}/>
     );
   }
 }
@@ -41,7 +41,7 @@ class Circle extends Shape {
   }
   render() {
     return (
-      <ellipse rx={this.width} ry={this.height} fill={this.color} transform={this.direction || ''}/>
+      <ellipse rx={this.width} ry={this.height} fill={this.color} transform={this.direction}/>
     );
   }
 }
@@ -65,6 +65,7 @@ class Image {
       height:this.height, 
       transform:this.direction, 
       'xlink:href':this.src
+    }
     );
   }
 }
