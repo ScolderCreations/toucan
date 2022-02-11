@@ -36,7 +36,7 @@ class Circle extends Shape {
   }
   render() {
     return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
-           <ellipse rx= ry= fill={this.color} />
+           <ellipse rx={this.width} ry={this.height} fill={this.color} />
            </svg>);
   }
 }
@@ -52,5 +52,10 @@ class Image {
     this.width = width || 50;
     this.height = height || width || 50;
     this.view = true
+  }
+  render() {
+    return (<svg version="1.1" width={this.width} height={this.height} xmlns="http://www.w3.org/2000/svg">
+           <image width="100%" height="100%" transform={`rotate(${this.direction})`} xlink:href={this.src}/>
+           </svg>);
   }
 }
