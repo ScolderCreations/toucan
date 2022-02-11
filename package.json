@@ -7,6 +7,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "react@next": "latest",
+    "react-dom@next": "latest"
   }
 }
