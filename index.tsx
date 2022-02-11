@@ -60,8 +60,10 @@ class Image {
 }
 
 function drawScreen(bg: string) {
+  renderObject = renderObject + (<svg version="1.1" width="1440" height="1080" xmlns="http://www.w3.org/2000/svg">);
   toRender.forEach((obj) => {
-    global var renderObject;
+    var renderObject;
     renderObject = renderObject + obj.render()
-  })
+  });
+  renderObject = renderObject + (</svg>)
 }
