@@ -60,7 +60,7 @@ class Image {
   }
   render() {
     return (
-      <image width={this.width} height={this.height} transform={this.direction || ''} xlink:href={this.src}/>
+      <image width={this.width} height={this.height} transform={this.direction || ''} 'xlink:href'={this.src}/>
     );
   }
 }
