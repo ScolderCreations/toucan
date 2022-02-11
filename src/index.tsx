@@ -1,3 +1,5 @@
+if (!ReactDOM.render) import ReactDOM from 'react-dom'
+
 function getScreen() {document.getElementById("toucan");}
 
 var toRender = []
@@ -72,6 +74,6 @@ function drawScreen() {
   });
   renderObject = renderObject + (</svg>);
   if (!(getScreen() == renderObject)) {
-    getScreen() = renderObject
+    ReactDOM.render(element, document.getElementById('root'));
   }
 }
