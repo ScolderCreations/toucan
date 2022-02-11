@@ -1,10 +1,10 @@
 let byId = document.getElementById;
 
-var toRender = array []
-var renderObject = string ""
+var toRender = []
+var renderObject = ""
 
 class Shape {
-  constructor(width, height, color) {
+  constructor(width: number, height: number, color: string) {
     this.width = width || 50;
     this.height = height || width || 50;
     this.color = color || "#ffffff";
@@ -20,9 +20,9 @@ class Shape {
 }
 
 class Rectangle extends Shape {
-  constructor(width, height, color, rotation) {
+  constructor(width: number, height: number, color: string, rotation: number) {
     super(width, height, color);
-    this.type = string "rect";
+    this.type = "rect";
     this.direction = rotation
   }
   render() {
@@ -31,7 +31,7 @@ class Rectangle extends Shape {
 }
 
 class Circle extends Shape {
-  constructor(width, height, color) {
+  constructor(width: number, height: number, color: string) {
     super(width, height, color);
     this.type = "circ"
     this.x = 0
@@ -43,13 +43,13 @@ class Circle extends Shape {
 }
 
 class Image {
-  constructor(src, width, height, rotation) {
+  constructor(src: string, width: number, height: number, rotation: number) {
     if (!!src) {
-      this.src = string src
+      this.src = src
     } else {
       throw new Error ("Image cannot have no source: please provide URL")
     }
-    this.direction = rotation
+    this.direction = rotation;
     this.width = width || 50;
     this.height = height || width || 50;
     this.view = true
@@ -59,8 +59,9 @@ class Image {
   }
 }
 
-function drawScreen(bg) {
+function drawScreen(bg: string) {
   toRender.forEach((obj) => {
-    
+    global var renderObject;
+    renderObject = renderObject + obj.render()
   })
 }
