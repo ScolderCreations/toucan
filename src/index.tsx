@@ -1,4 +1,4 @@
-let byId = document.getElementById;
+function getScreen() {document.getElementById("toucan");}
 
 var toRender = []
 var renderObject = ""
@@ -22,23 +22,25 @@ class Shape {
 class Rectangle extends Shape {
   constructor(width: number, height: number, color: string, rotation: number) {
     super(width, height, color);
-    this.type = "rect";
     this.direction = rotation
   }
   render() {
-    return (<rect width={this.width} height={this.height} fill={this.color} {!!this.direction ? transform=`rotate(${this.direction}` : ""}/>);
+    return (
+      <rect width={this.width} height={this.height} fill={this.color} {!!this.direction ? transform=`rotate(${this.direction}` : ""}/>
+    );
   }
 }
 
 class Circle extends Shape {
   constructor(width: number, height: number, color: string) {
     super(width, height, color);
-    this.type = "circ"
     this.x = 0
     this.y = 0
   }
   render() {
-    return (<ellipse rx={this.width} ry={this.height} fill={this.color} />);
+    return (
+      <ellipse rx={this.width} ry={this.height} fill={this.color} />
+    );
   }
 }
 
@@ -55,15 +57,22 @@ class Image {
     this.view = true
   }
   render() {
-    return (<image width={this.width} height={this.height} transform={`rotate(${this.direction})`} xlink:href={this.src}/>);
+    return (
+      <image width={this.width} height={this.height} {this.direction ? transform={`rotate(${this.direction})`} : ""} xlink:href={this.src}/>
+    );
   }
 }
 
-function drawScreen(bg: string) {
-  renderObject = renderObject + (<svg version="1.1" width="1440" height="1080" xmlns="http://www.w3.org/2000/svg">);
+function drawScreen() {
+  renderObject = renderObject + (
+    <svg version="1.1" width="1440" height="1080" xmlns="http://www.w3.org/2000/svg">
+      );
   toRender.forEach((obj) => {
     var renderObject;
     renderObject = renderObject + obj.render()
   });
-  renderObject = renderObject + (</svg>)
+  renderObject = renderObject + (</svg>);
+  if (!(getScreen() == renderObject)) {
+    getScreen() = renderObject
+  }
 }
