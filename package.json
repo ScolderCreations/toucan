@@ -2,7 +2,7 @@
   "name": "toucanrender",
   "version": "0.0.1",
   "scripts": {
-    "build": "babel root -d dist",
+    "build": "babel src --out-dir dist",
     "test": "echo No test available && exit 0"
   },
   "devDependencies": {
