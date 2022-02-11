@@ -1,0 +1,12 @@
+{
+  "name": "toucanrender",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo No test available && exit 0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0"
+  }
+}
