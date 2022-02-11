@@ -17,15 +17,30 @@ class Shape {
 }
 
 class Rectangle extends Shape {
-  constructor(width, height, color) {
-    this.type = "rect"; 
-    super(width, height, color)
+  constructor(width, height, color, rotation) {
+    super(width, height, color);
+    this.type = "rect";
+    this.direction = rotation
   }
 }
 
 class Circle extends Shape {
   constructor(width, height, color) {
-    this.type = "circ";
-    super(width, height, color)
+    super(width, height, color);
+    this.type = "circ"
+  }
+}
+
+class Image {
+  constructor(src, width, height, rotation) {
+    if (!!src) {
+      this.src = src
+    } else {
+      throw new Error ("Image cannot have no source: please provide URL")
+    }
+    this.direction = rotation
+    this.width = width || 50;
+    this.height = height || width || 50;
+    this.view = true
   }
 }
