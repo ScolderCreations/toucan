@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel --extensions .tsx src --out-dir dist",
     "test": "echo No test available && exit 0"
   },
   "devDependencies": {
