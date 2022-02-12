@@ -9,8 +9,8 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-react-jsx": "latest"
-    "@babel/preset-typescript": "latest"
+    "@babel/plugin-transform-react-jsx": "latest",
+    "@babel/preset-typescript": "latest",
     "react": "latest",
     "react-dom": "latest"
   }
