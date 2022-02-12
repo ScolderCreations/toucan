@@ -7,6 +7,5 @@
     "electron": "10.4.7",
     "safari": "11",
     "node": "12"
-  },
-  "minifed": true
+  }
 }
