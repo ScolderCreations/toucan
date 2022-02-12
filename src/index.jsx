@@ -1,4 +1,4 @@
-if (!ReactDOM.render) import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 
 function getScreen() {document.getElementById("toucan");}
 
