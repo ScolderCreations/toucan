@@ -2,7 +2,7 @@
   "plugins": ["@babel/plugin-transform-react-jsx"],
   "targets": {
     "chrome": "69",
-    "ie": "11",
+    "edge": "11",
     "firefox": "69",
     "electron": "10.4.7",
     "safari": "11",
