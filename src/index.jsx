@@ -6,7 +6,7 @@ var toRender = []
 var renderObject = ""
 
 class Shape {
-  constructor(width: number, height: number, color: string) {
+  constructor(width, height, color) {
     this.width = width || 50;
     this.height = height || width || 50;
     this.color = color || "#ffffff";
@@ -22,7 +22,7 @@ class Shape {
 }
 
 class Rectangle extends Shape {
-  constructor(width: number, height: number, color: string, rotation: number) {
+  constructor(width, height, color, rotation) {
     super(width, height, color);
     this.direction = rotation
   }
@@ -34,7 +34,7 @@ class Rectangle extends Shape {
 }
 
 class Circle extends Shape {
-  constructor(width: number, height: number, color: string) {
+  constructor(width, height, color) {
     super(width, height, color);
     this.x = 0
     this.y = 0
@@ -47,7 +47,7 @@ class Circle extends Shape {
 }
 
 class Image {
-  constructor(src: string, width: number, height: number, rotation: number) {
+  constructor(src, width, height, rotation) {
     if (!!src) {
       this.src = src
     } else {
@@ -77,7 +77,7 @@ function drawScreen() {
       height="1080" 
       xmlns="http://www.w3.org/2000/svg">
       );
-  toRender.forEach((obj) => {
+  toRender.forEach(function(obj) {
     renderObject = renderObject + obj.render()
   });
   renderObject = renderObject + (
