@@ -6,25 +6,27 @@ var toRender = []
 var renderObject = ""
 
 class Shape {
-  constructor(width, height, color) {
-    this.width = width || 50;
-    this.height = height || width || 50;
-    this.color = color || "#ffffff";
+  constructor(opt) {
+    this.width = opt.width || 50;
+    this.height = opt.height || opt.width || 50;
+    this.color = opt.color || "#ffffff";
     this.view = true
+    this.x = opt.x||0
+    this.y = opt.y||0
   }
   show() {this.view = true}
   hide() {this.view = false}
-  change(width, height, color) {
-    if (width)  this.width = width;
-    if (height) this.height = height;
-    if (color)  this.color = color;
+  change(whc) {
+    if (whc.width)  this.width = whc.width;
+    if (whc.height) this.height = whc.height;
+    if (whc.color)  this.color = whc.color;
   }
 }
 
 class Rectangle extends Shape {
-  constructor(width, height, color, rotation) {
-    super(width, height, color);
-    this.direction = rotation
+  constructor(opt) {
+    super(opt);
+    this.direction = opt.rotation
   }
   render() {
     return (
@@ -47,17 +49,19 @@ class Circle extends Shape {
 }
 
 class Image {
-  constructor(src, width, height, rotation) {
-    if (!!src) {
-      this.src = src
+  constructor(opt) {
+    if (!!opt.src) {
+      this.src = opt.src
     } else {
       throw new Error ("Image cannot have no source: please provide URL")
     }
-    this.direction = rotation;
-    this.width = width || 50;
-    this.height = height || width || 50;
+    this.direction = opt.rotation;
+    this.width = opt.width || 50;
+    this.height = opt.height || opt.width || 50;
     this.view = true
   }
+  show() {this.view = true}
+  hide() {this.view = false}
   render() {
     return React.createElement("image",
       {
@@ -73,7 +77,7 @@ class Image {
 function drawScreen(a) {
   renderObject = renderObject + (
     <svg version="1.1" 
-      width="1440"
+      width=$`{a.width}`
       height="1080" 
       xmlns="http://www.w3.org/2000/svg">
       );
@@ -83,7 +87,7 @@ function drawScreen(a) {
   renderObject = renderObject + (
     </svg>
   );
-  if (!(getScreen(a) == renderObject)) {
-    ReactDOM.render(element, getScreen(a));
+  if (!(getScreen(a.src) == renderObject)) {
+    ReactDOM.render(element, getScreen(a.src));
   }
 }
