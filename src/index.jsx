@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 
-function getScreen() {document.getElementById("toucan");}
+function getScreen(a) {document.getElementById(a);}
 
 var toRender = []
 var renderObject = ""
@@ -70,7 +70,7 @@ class Image {
   }
 }
 
-function drawScreen() {
+function drawScreen(a) {
   renderObject = renderObject + (
     <svg version="1.1" 
       width="1440"
@@ -83,7 +83,7 @@ function drawScreen() {
   renderObject = renderObject + (
     </svg>
   );
-  if (!(getScreen() == renderObject)) {
-    ReactDOM.render(element, document.getElementById('root'));
+  if (!(getScreen(a) == renderObject)) {
+    ReactDOM.render(element, getScreen(a));
   }
 }
