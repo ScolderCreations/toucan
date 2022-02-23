@@ -28,30 +28,30 @@ class Rectangle extends Shape {
   }
   render() {
     return (
-      $`<rect width={this.width} height={this.height} fill={this.color} transform={this.direction}/>`
+      `<rect width=${this.width} height=${this.height} fill=${this.color} transform=${this.direction}/>`
     );
   }
 }
 
 class Circle extends Shape {
-  constructor(width, height, color) {
-    super(width, height, color);
-    this.x = 0
-    this.y = 0
+  constructor(opt) {
+    super(opt);
   }
   render() {
     return (
-      $`<ellipse rx={this.width} ry={this.height} fill={this.color} transform={this.direction}/>`
+      `<ellipse rx=${this.width} ry=${this.height} fill=${this.color} transform=${this.direction}/>`
     );
   }
 }
 
 class Image {
   constructor(opt) {
-    if (!!opt.src) {
+    if (!opt.src.includes('/')) {
       this.src = opt.src
     } else {
-      throw new Error ("Image cannot have no source: please provide URL")
+      throw new Error ("Image cannot have no source: please provide URL. \
+      (This error will also show up if you linked a file using \
+        'file.extension', without a ./ or ../)")
     }
     this.direction = opt.rotation;
     this.width = opt.width || 50;
@@ -61,7 +61,7 @@ class Image {
   show() {this.view = true}
   hide() {this.view = false}
   render() {
-    return $`<image width={this.width} height={this.height} transform={this.direction} xlink:href={this.src}`;
+    return `<image width=${this.width} height=${this.height} transform=${this.direction} xlink:href=${this.src}`;
   }
 }
 
