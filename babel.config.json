@@ -1,5 +1,4 @@
 {
-  "plugins": ["@babel/plugin-transform-react-jsx"],
   "targets": {
     "chrome": "69",
     "edge": "11",
