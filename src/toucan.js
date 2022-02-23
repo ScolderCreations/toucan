@@ -57,7 +57,7 @@ class Circle extends Shape {
 class Image {
   constructor(opt) {
     if (!opt.src.includes('/')) {
-      this.src = opt.src.replace("\"", "\\"";
+      this.src = opt.src.replace("\"", '\\"');
     } else {
       throw new ReferenceError ("Image cannot have no source: please provide URL. \
       (This error will also show up if you linked a file using \
@@ -82,7 +82,7 @@ class Image {
 
 class Text {
   constructor(opt) {
-    this.c = opt.text||String();
+    this.c = opt.text.replace('"', '\\"')||String();
     this.x = opt.x||0;
     this.y = opt.y||0;
   }
