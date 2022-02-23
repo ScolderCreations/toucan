@@ -28,7 +28,7 @@ class Shape {
   show() {this.view = true}
   hide() {this.view = false}
   change(whc) {
-  if (whc.width)  this.width = whc.width;
+    if (whc.width)  this.width = whc.width;
     if (whc.height) this.height = whc.height;
     if (whc.color)  this.color = whc.color;
   }
@@ -57,7 +57,7 @@ class Circle extends Shape {
 class Image {
   constructor(opt) {
     if (!opt.src.includes('/')) {
-      this.src = opt.src;
+      this.src = opt.src.replace("\"", "\\"";
     } else {
       throw new ReferenceError ("Image cannot have no source: please provide URL. \
       (This error will also show up if you linked a file using \
