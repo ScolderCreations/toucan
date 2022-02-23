@@ -1,5 +1,3 @@
-import ReactDOM from 'react-dom'
-
 function getScreen(a) {document.getElementById(a);}
 
 var toRender = []
@@ -30,7 +28,7 @@ class Rectangle extends Shape {
   }
   render() {
     return (
-      <rect width={this.width} height={this.height} fill={this.color} transform={this.direction}/>
+      $`<rect width={this.width} height={this.height} fill={this.color} transform={this.direction}/>`
     );
   }
 }
@@ -43,7 +41,7 @@ class Circle extends Shape {
   }
   render() {
     return (
-      <ellipse rx={this.width} ry={this.height} fill={this.color} transform={this.direction}/>
+      $`<ellipse rx={this.width} ry={this.height} fill={this.color} transform={this.direction}/>`
     );
   }
 }
@@ -63,31 +61,22 @@ class Image {
   show() {this.view = true}
   hide() {this.view = false}
   render() {
-    return React.createElement("image",
-      {
-      width:this.width,
-      height:this.height, 
-      transform:this.direction, 
-      'xlink:href':this.src
-    }
+    return $`<image width={this.width} height={this.height} transform={this.direction} xlink:href={this.src}`
     );
   }
 }
 
 function drawScreen(a) {
   renderObject = renderObject + (
-    <svg version="1.1" 
-      width=$`{a.width}`
-      height="1080" 
-      xmlns="http://www.w3.org/2000/svg">
+    `<svg version="1.1" width=${a.width || 500} height="${a.height || 500}" xmlns="http://www.w3.org/2000/svg">`
       );
   toRender.forEach(function(obj) {
     renderObject = renderObject + obj.render()
   });
   renderObject = renderObject + (
-    </svg>
+    '</svg>'
   );
-  if (!(getScreen(a.src) == renderObject)) {
-    ReactDOM.render(element, getScreen(a.src));
+  if (!(getScreen(a.src).innerHTML == renderObject)) {
+    getScreen(a.src).innerHTML = renderObject;
   }
 }
