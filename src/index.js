@@ -60,6 +60,11 @@ class Image {
   }
   show() {this.view = true}
   hide() {this.view = false}
+  change(whc) {
+    if (whc.width)  this.width = whc.width;
+    if (whc.height) this.height = whc.height;
+    if (whc.color)  this.color = whc.color;
+  }
   render() {
     return `<image width=${this.width} height=${this.height} transform=${this.direction} xlink:href=${this.src}`;
   }
