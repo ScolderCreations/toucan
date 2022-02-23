@@ -61,8 +61,7 @@ class Image {
   show() {this.view = true}
   hide() {this.view = false}
   render() {
-    return $`<image width={this.width} height={this.height} transform={this.direction} xlink:href={this.src}`
-    );
+    return $`<image width={this.width} height={this.height} transform={this.direction} xlink:href={this.src}`;
   }
 }
 
