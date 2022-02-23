@@ -1,7 +1,17 @@
 function getScreen(a) {
   document.getElementById(a);
 }
-
+function createRender() {
+  renderObject = renderObject + (
+    `<svg version="1.1" width=${a.width || 500} height="${a.height || 500}" xmlns="http://www.w3.org/2000/svg">`
+      );
+  toRender.forEach(function(obj) {
+    renderObject = renderObject + obj.render();
+  });
+  renderObject = renderObject + (
+    '</svg>'
+  );
+}
 var toRender = [];
 var renderObject = "";
 
@@ -82,29 +92,13 @@ class Text {
 }
 
 function drawScreen(a) {
-  renderObject = renderObject + (
-    `<svg version="1.1" width=${a.width || 500} height="${a.height || 500}" xmlns="http://www.w3.org/2000/svg">`
-      );
-  toRender.forEach(function(obj) {
-    renderObject = renderObject + obj.render();
-  });
-  renderObject = renderObject + (
-    '</svg>'
-  );
+  createRender();
   if (!(getScreen(a.src).innerHTML == renderObject)) {
     getScreen(a.src).innerHTML = renderObject;
   }
 }
 
 function returnScreen(a) {
-  renderObject = renderObject + (
-    `<svg version="1.1" width=${a.width || 500} height="${a.height || 500}" xmlns="http://www.w3.org/2000/svg">`
-      );
-  toRender.forEach(function(obj) {
-    renderObject = renderObject + obj.render();
-  });
-  renderObject = renderObject + (
-    '</svg>'
-  );
-  return renderObject
+  createRender();
+  return renderObject;
 }
