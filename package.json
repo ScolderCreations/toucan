@@ -3,14 +3,11 @@
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel --extensions .jsx src --out-dir ./dist",
+    "build": "babel --extensions .js src --out-dir ./dist",
     "test": "echo No test available && exit 0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-react-jsx": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "@babel/core": "^7.0.0"
   }
 }
