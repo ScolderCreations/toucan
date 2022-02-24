@@ -1,4 +1,5 @@
 {
+  "minified": true,
   "targets": {
     "chrome": "69",
     "edge": "11",
