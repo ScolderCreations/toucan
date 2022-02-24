@@ -4,10 +4,10 @@
   "plugins": ["uglify:after"],
   "targets": {
     "chrome": "69",
-    "edge": "11",
+    "edge": "69",
     "firefox": "69",
     "electron": "10.4.7",
     "safari": "11",
-    "node": "12"
+    "node": "14"
   }
 }
