@@ -1,4 +1,5 @@
-/* @param a: string */
+// @ts-check
+/** @param {string[]} a */
 function getScreen(a) {
   document.getElementById(a);
 }
@@ -111,7 +112,7 @@ class Text {
   }
 
 }
-/* @param scr: object */
+/** @param {object[]} scr */
 function drawScreen(scr) {
   createRender();
 
