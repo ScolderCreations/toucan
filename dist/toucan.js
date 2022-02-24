@@ -1,3 +1,4 @@
+/* @param a: string */
 function getScreen(a) {
   document.getElementById(a);
 }
@@ -110,16 +111,16 @@ class Text {
   }
 
 }
-
-function drawScreen(a) {
+/* @param scr: object */
+function drawScreen(scr) {
   createRender();
 
-  if (!(getScreen(a.src).innerHTML == renderObject)) {
-    getScreen(a.src).innerHTML = renderObject;
+  if (!(getScreen(scr.src).innerHTML == renderObject)) {
+    getScreen(scr.src).innerHTML = renderObject;
   }
 }
 
-function returnScreen(a) {
+function returnScreen(scr) {
   createRender();
   return renderObject;
 }
