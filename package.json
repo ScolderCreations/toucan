@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "babel-plugin-uglify": "^1.0.2"
   }
 }
