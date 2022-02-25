@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <body lang="en">
-    <script src="./dist/index.js" type="module"></script>
+    <script defer src="./dist/index.js"></script>
     <div id="port"></div>
     <script>
-    import * as Toucan from './dist/index.js'
-    Toucan.drawScreen(
+    const example = new Circle({x: 0, y: 0, width: 50, height: 50, color: "#ffffff")
+    renderObject[0] = example.render()
+    drawScreen(
       {
         src: "port",
         width: 680,
         height: 360
       }
-                      );
+    );
     </script>
   </body>
 </html>
