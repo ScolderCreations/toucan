@@ -1,7 +1,6 @@
 {
   "minified": true,
   "comments": false,
-  "plugins": ["uglify:after"],
   "targets": {
     "chrome": "69",
     "edge": "69",
