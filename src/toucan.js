@@ -127,5 +127,5 @@ function drawScreen(scr) {
 
 function returnScreen(scr) {
   createRender();
-  return renderObject;
+  return `<img src='data:image/svg+xml,${encodeURIComponent(renderObject)}'><img>`;
 }
